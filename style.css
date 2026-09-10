@@ -1,0 +1,483 @@
+/* -------------------------
+   FONTS
+CUSTOM FONTS YAY
+------------------------- */
+
+@font-face {
+    font-family: 'brianne'; /* card description, close button */
+    src: url('fonts/Brianne_s_hand.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dwarves'; /* choose plant button */
+    src: url('fonts/DWARVESC.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'houseofterror'; /* almanac header */
+    src: url('fonts/HouseofTerror Regular.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+/* -------------------------
+   PAGE
+------------------------- */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #2a2a2a;
+}
+
+
+/* -------------------------
+   MAIN ALMANAC WINDOW
+------------------------- */
+
+.almanac {
+    position: relative;
+
+    width: 800px;
+    height: 600px;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.05),
+            rgba(100,50,10,0.05)
+        ),
+        #e5b885;
+
+    border: 5px solid #555866;
+    border-radius: 15px;
+
+    box-shadow:
+        inset 0 0 0 3px #22242c,
+        inset 0 0 25px rgba(90, 50, 20, 0.45),
+        0 6px 15px rgba(0, 0, 0, 0.6);
+
+    overflow: hidden;
+}
+
+
+/* -------------------------
+   HEADER
+------------------------- */
+
+.almanac-header {
+    width: 72%;
+    height: 75px;
+
+    margin: 18px auto 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        #8e909f;
+
+
+    border: 4px solid #4c4e5e;
+    border-radius: 12px;
+
+    box-shadow:
+        inset 0 4px 0 rgba(255,255,255,0.2),
+        inset 0 -5px 0 rgba(0,0,0,0.2),
+        0 3px 4px rgba(0,0,0,0.4);
+}
+
+
+.almanac-header h1 {
+    margin: 0;
+
+    font-family: 'houseofterror', sans-serif;
+    font-size: 3em;
+    letter-spacing: -2px;
+    color: rgb(245, 245, 235);
+
+    -webkit-text-stroke: 2px black;
+
+    text-shadow:
+        4px 4px 4px black,
+        2px 2px 1px black;
+}
+
+
+/* -------------------------
+   CONTENT AREA
+------------------------- */
+
+.almanac-body {
+    display: flex;
+    gap: 25px;
+
+    width: 82%;
+    height: 300px;
+
+    margin: 45px auto 0;
+}
+
+.content {
+    flex: 1;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+    background:
+        linear-gradient(
+            #7c3514,
+            #69280d
+        );
+
+    border: 4px solid #5a2108;
+    border-radius: 18px;
+
+    box-shadow:
+        inset 0 0 0 4px #8e431c,
+        inset 0 0 18px rgba(0,0,0,0.35),
+        0 4px 5px rgba(0,0,0,0.35);
+}
+
+
+/* second box: same theme as the header */
+
+.content--info {
+    background: #8e909f;
+
+    border: 4px solid #4c4e5e;
+
+    box-shadow:
+        inset 0 4px 0 rgba(255,255,255,0.2),
+        inset 0 -5px 0 rgba(0,0,0,0.2),
+        0 3px 4px rgba(0,0,0,0.4);
+}
+
+.info-text {
+    margin: 0;
+
+    font-family: 'brianne', sans-serif;
+    font-size: 1.5em;
+    line-height: 1.2;
+    text-align: center;
+
+    color: rgb(245, 245, 235);
+
+    text-shadow: 2px 2px 1px rgba(0,0,0,0.4);
+}
+
+
+/* -------------------------
+   SUNFLOWER
+------------------------- */
+
+.display-icon {
+    flex: 1;
+    min-height: 0;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.display-icon img {
+    max-height: 75%;
+    max-width: 50%;
+    width: auto;
+    height: auto;
+
+    display: block;
+    object-fit: contain;
+
+    filter:
+        drop-shadow(2px 3px 1px rgba(0,0,0,0.5));
+}
+
+
+/* -------------------------
+   VIEW PLANTS BUTTON
+------------------------- */
+
+.view-plants {
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    font-family: 'dwarves', sans-serif;
+    font-size: 1.4em;
+
+    text-decoration: none;
+
+    color: rgb(194, 160, 85);
+
+    background:
+        linear-gradient(
+            #994817,
+            #77330f
+        );
+
+    border: 2px solid #552009;
+    border-radius: 3px;
+
+    -webkit-text-stroke: 1px #5a310b;
+
+    text-shadow:
+        1px 2px 0 #4d250b;
+
+    box-shadow:
+        inset 0 2px 0 rgba(255,255,255,0.12),
+        0 2px 0 #421607;
+
+    transition:
+        transform 0.08s,
+        filter 0.08s;
+}
+
+.view-plants:hover {
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+}
+
+.view-plants:active {
+    transform: translateY(2px);
+}
+
+
+/* -------------------------
+   FOOTER / CLOSE
+------------------------- */
+
+footer.almanac,
+.almanac-footer {
+    position: absolute;
+
+    width: auto;
+    height: auto;
+
+    right: 18px;
+    bottom: 10px;
+
+    margin: 0;
+
+    background: none;
+    border: none;
+    box-shadow: none;
+
+    overflow: visible;
+}
+
+
+.close-button {
+    display: inline-block;
+
+    padding: 5px 12px;
+
+    font-family: 'brianne', sans-serif;
+    font-size: 1.1em;
+
+    text-decoration: none;
+
+    color: #54280d;
+
+    background: #eab66f;
+
+    border: 2px solid #8a5727;
+    border-radius: 9px;
+
+    box-shadow:
+        inset 0 2px 0 rgba(255,255,255,0.35),
+        0 2px 0 #69401e;
+}
+
+.close-button:hover {
+    filter: brightness(1.08);
+}
+
+/* -------------------------
+   PLANT CARD LIST (static, single column)
+------------------------- */
+
+.plant_collection {
+    width: 82%;
+    height: 452px;
+
+    margin: 22px auto 0;
+    padding-right: 8px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    overflow-y: auto;
+}
+
+
+.plant_card {
+    display: flex;
+    gap: 12px;
+
+    padding: 14px;
+
+    background:
+        linear-gradient(#7c3514, #69280d);
+
+    border: 4px solid #5a2108;
+    border-radius: 14px;
+
+    box-shadow:
+        inset 0 0 0 4px #8e431c,
+        inset 0 0 16px rgba(0, 0, 0, 0.35);
+}
+
+
+.plant_card_icon {
+    flex: 0 0 120px;
+    align-self: stretch;
+
+    margin: 0;
+    padding: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle at 50% 40%, #7ec850, #4f9b34 75%);
+
+    border: 3px solid #3c2a12;
+    border-radius: 8px;
+
+    box-shadow:
+        inset 0 0 12px rgba(0, 0, 0, 0.35);
+
+    overflow: hidden;
+}
+
+.plant_card_icon img {
+    max-height: 50%;
+    max-width: 50%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+
+    image-rendering: pixelated;
+
+    filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.4));
+}
+
+
+.plant_card_body {
+    flex: 1;
+    min-width: 0;
+}
+
+
+.plant_name {
+    margin: 0 0 4px 0;
+
+    font-family: 'houseofterror', sans-serif;
+    font-size: 1.6em;
+    letter-spacing: -1px;
+
+    color: #f2e6c8;
+
+    -webkit-text-stroke: 1.5px #3a1c08;
+    text-shadow: 2px 2px 0 #3a1c08;
+}
+
+
+.plant_stats {
+    margin: 0 0 6px 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 12px;
+
+    font-family: 'brianne', sans-serif;
+    font-size: 1.05em;
+
+    color: #e7b48a;
+}
+
+.plant_stats b {
+    color: #f2a02e;
+}
+
+
+.plant_caption,
+.plant_desc {
+    margin: 0 0 6px 0;
+
+    font-family: 'brianne', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.15;
+
+    color: #f6e7cf;
+}
+.plant_caption b {
+    color: rgb(227, 18, 18);
+}
+
+.plant_desc {
+    color: #d7b48c;
+}
+
+/* -------------------------
+   NIGHT-THEMED CARDS
+------------------------- */
+
+.plant_card.night {
+    background:
+        linear-gradient(#2c2d54, #1b1c38);
+
+    border-color: #15162c;
+
+    box-shadow:
+        inset 0 0 0 4px #3c3e70,
+        inset 0 0 16px rgba(0, 0, 0, 0.5);
+}
+
+.plant_card.night .plant_card_icon {
+    background:
+        radial-gradient(circle at 50% 40%, #3f6f6c, #21404b 75%);
+
+    border-color: #10111f;
+}
+
+.plant_card.night .plant_name {
+    color: #dbe4f7;
+
+    -webkit-text-stroke: 1.5px #0f1024;
+    text-shadow: 2px 2px 0 #0f1024;
+}
+
+.plant_card.night .plant_stats {
+    color: #9aa6d6;
+}
+
+.plant_card.night .plant_stats b {
+    color: #c6a3ec;
+}
+
+.plant_card.night .plant_description {
+    color: #e2e7f6;
+}
+
+.plant_card.night .plant_flavor {
+    color: #a7b0d4;
+}
+
