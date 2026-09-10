@@ -195,8 +195,8 @@ body {
 }
 
 .display-icon img {
-    max-height: 75%;
-    max-width: 50%;
+    max-height: 100%;
+    max-width: 100%;
     width: auto;
     height: auto;
 
